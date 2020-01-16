@@ -18,17 +18,31 @@
       --u-omg: 48px;
       --u-oomg: 64px;
       --u-ooomg: 128px;
+      
+      --c-front: #000;
+      --c-back: #fff;
     }
+
+    /* Dark mode */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --c-front: #fff;
+        --c-back: #000;
+      }
+    }
+
     html, body {
       margin: 0;
       padding: 0;
       font-size: 18px;
       font-family: 'Lora', serif;
+      background-color: var(--c-back);
+      color: var(--c-front);
     }
 
     .author {
-      background-color: #000;
-      color: #fff;
+      background-color: var(--c-front);
+      color: var(--c-back);
       padding: var(--u-large);
       display: flex;
       position: relative;
@@ -38,7 +52,7 @@
       content: "";
       width: 13px;
       height: 13px;
-      background-color: #fff;
+      background-color: var(--c-back);
       transform: rotate(45deg);
       transform-origin: 0 0;
       position: absolute;
@@ -89,8 +103,8 @@
       --wallpaper-height: calc(var(--wallpaper-width) * 2.16);
       --wallpaper-corners: calc(var(--wallpaper-width) * 0.1);
 
-      background-color: #000;
-      background-image: radial-gradient(#fff 15%, transparent 16%), radial-gradient(#fff 15%, transparent 16%);
+      background-color: var(--c-front);
+      background-image: radial-gradient(var(--c-back) 15%, transparent 16%), radial-gradient(var(--c-back) 15%, transparent 16%);
       background-position: 0.5em 0.5em, 1.5em 1.5em;
       background-size: 2em 2em;
       border-radius: var(--wallpaper-corners);
@@ -105,14 +119,14 @@
     }
 
     footer {
-      background-color: #000;
+      background-color: var(--c-front);
       padding: var(--u-larger) var(--u-large);
-      color: #fff;
+      color: var(--c-back);
       line-height: 2em;
       font-size: var(--u-large);
     }
     footer a {
-      color: #fff;
+      color: inherit;
     }
 
     .preview:not(:target) {
@@ -149,7 +163,7 @@
       position: fixed;
       bottom: 0;
       width: 100vw;
-      background-color: #000;
+      background-color: var(--c-front);
       left: 0;
       display: flex;
       justify-content: space-between;
@@ -158,7 +172,7 @@
     }
     .preview__controls a {
       padding: var(--u-larger) var(--u-large);
-      color: #fff;
+      color: var(--c-back);
       font-family: 'Montserrat', sans-serif;
       text-decoration: none;
     }

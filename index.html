@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Free iPhone Wallpapers made by Zinc</title>
+  <link href="https://fonts.googleapis.com/css?family=Lora|Montserrat:800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --wallpaper-width: calc(calc(100vw - 48px) / 3);
+      --wallpaper-height: calc(var(--wallpaper-width) * 2.16);
+      --wallpaper-corners: calc(var(--wallpaper-width) * 0.1);
+
+      --u-smallest: 2px;
+      --u-smaller: 4px;
+      --u-small: 8px;
+      --u-medium: 12px;
+      --u-large: 16px;
+      --u-larger: 24px;
+      --u-largest: 32px;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-size: 18px;
+      font-family: 'Lora', serif;
+    }
+
+    .author {
+      background-color: #000;
+      color: #fff;
+      padding: var(--u-large);
+      display: flex;
+      position: relative;
+    }
+    .author:after {
+      display: block;
+      content: "";
+      width: 13px;
+      height: 13px;
+      background-color: #fff;
+      transform: rotate(45deg);
+      transform-origin: 0 0;
+      position: absolute;
+      bottom: -4px;
+      left: var(--u-largest);
+    }
+    
+    .author__avatar {
+      background-image: url(https://secure.gravatar.com/avatar/0ef69580ef5e8974abfa051f068e541c?s=64);
+      background-size: var(--u-largest);
+      border-radius: 50%;
+      display: inline-block;
+      height: var(--u-largest);
+      width: var(--u-largest);
+      margin-right: var(--u-medium);
+    }
+    .author__name {
+      position: relative;
+      top: var(--u-smallest);
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    header {
+      padding: var(--u-larger) var(--u-large) var(--u-medium);
+    }
+
+    header p {
+      margin: 0;
+    }
+
+    header h1 {
+      margin: 0 0 var(--u-large);
+      font-size: 48px;
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.1em;
+    }
+
+    .wallpapers {
+      padding: var(--u-smallest) var(--u-large) var(--u-largest);
+      list-style: inside none;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 8px;
+      grid-row-gap: var(--u-large);
+    }
+    .wallpaper {
+      background-color: #000;
+      background-image: radial-gradient(#fff 15%, transparent 16%), radial-gradient(#fff 15%, transparent 16%);
+      background-position: 0.5em 0.5em, 1.5em 1.5em;
+      background-size: 2em 2em;
+      border-radius: var(--wallpaper-corners);
+      display: block;
+      font-size: calc(var(--wallpaper-width) / 5); /* this controls the background scale */
+      height: var(--wallpaper-height);
+      width: var(--wallpaper-width);
+    }
+
+    footer {
+      background-color: #000;
+      padding: var(--u-larger) var(--u-large);
+      color: #fff;
+      line-height: 2em;
+      font-size: 14px;
+    }
+    footer a {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="author">
+    <a href="http://zinc.world" target="_blank" class="author__avatar" aria-label="Zinc's Avatar"></a>
+    <strong class="author__name">zinc</strong>
+  </div>
+  <header>
+    <p>I made some free iPhone</p>
+    <h1>wallpapers</h1>
+    <p>from photos I take. I hope you’ll enjoy them.</p>
+  </header>
+  <ul class="wallpapers">
+    <li class="wallpaper"></li>
+    <li class="wallpaper"></li>
+    <li class="wallpaper"></li>
+    <li class="wallpaper"></li>
+    <li class="wallpaper"></li>
+    <li class="wallpaper"></li>
+    <li class="wallpaper"></li>
+    <li class="wallpaper"></li>
+    <li class="wallpaper"></li>
+    <li class="wallpaper"></li>
+  </ul>
+  <footer>
+    Content on this site is licensed under a <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)</a> licens
+  </footer>
+</body>
+</html>

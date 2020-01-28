@@ -19,15 +19,18 @@
       --u-oomg: 64px;
       --u-ooomg: 128px;
       
-      --c-front: #000;
+      --c-front: #20202C;
       --c-back: #fff;
     }
 
     /* Dark mode */
     @media (prefers-color-scheme: dark) {
       :root {
-        --c-front: #fff;
-        --c-back: #000;
+        --c-front: #000;
+        --c-back: #20202C;
+      }
+      * {
+        color: #E5E5E5 !important;
       }
     }
 
@@ -50,28 +53,28 @@
     .author:after {
       display: block;
       content: "";
-      width: 13px;
-      height: 13px;
+      width: 21px;
+      height: 21px;
       background-color: var(--c-back);
       transform: rotate(45deg);
       transform-origin: 0 0;
       position: absolute;
-      bottom: -4px;
-      left: var(--u-largest);
+      bottom: -8px;
+      left: 40px;
     }
     
     .author__avatar {
-      background-image: url(https://secure.gravatar.com/avatar/0ef69580ef5e8974abfa051f068e541c?s=64);
-      background-size: var(--u-largest);
+      background-image: url(https://secure.gravatar.com/avatar/0ef69580ef5e8974abfa051f068e541c?s=256);
+      background-size: var(--u-omg);
       border-radius: 50%;
       display: inline-block;
-      height: var(--u-largest);
-      width: var(--u-largest);
+      height: var(--u-omg);
+      width: var(--u-omg);
       margin-right: var(--u-medium);
     }
     .author__name {
       position: relative;
-      top: var(--u-smallest);
+      top: var(--u-medium);
       font-family: 'Montserrat', sans-serif;
     }
 
@@ -103,20 +106,24 @@
       --wallpaper-height: calc(var(--wallpaper-width) * 2.16);
       --wallpaper-corners: calc(var(--wallpaper-width) * 0.1);
 
-      background-color: var(--c-back);
-      background-image: radial-gradient(var(--c-front) 15%, transparent 16%), radial-gradient(var(--c-front) 15%, transparent 16%);
+      background-color: var(--c-front);
+      /* background-image: radial-gradient(var(--c-front) 15%, transparent 16%), radial-gradient(var(--c-front) 15%, transparent 16%); */
       background-position: 0.5em 0.5em, 1.5em 1.5em;
       background-size: 2em 2em;
       border-radius: var(--wallpaper-corners);
-      display: block;
+      display: flex;
       font-size: calc(var(--wallpaper-width) / 5); /* this controls the background scale */
       height: var(--wallpaper-height);
       width: var(--wallpaper-width);
       overflow: hidden;
       font-size: 8px
     }
-    .wallpaper img {
+    .wallpaper__link {
+      display: block;
       width: 100%;
+      height: 100%;
+      background-position: 50%;
+      background-size: cover;
     }
 
     footer {
@@ -130,218 +137,12 @@
       color: inherit;
     }
 
-    .preview:not(:target) {
-      display: none;
-    }
-    .preview:target ~ * {
-      display: none;
-    }
-
-    .preview:target {
-      padding: var(--u-large);  
-      scroll-snap-type: x mandatory;
-      width: 100vw;
-      overflow-x: scroll;
-      display: flex;
-      box-sizing: border-box;
-      position: relative;
-      padding-bottom: var(--u-ooomg);
-    }
-    .preview:target * {
-      scroll-snap-align: center;
-    }
-    .preview__image {
-      --preview-width: calc(100vw - var(--u-ooomg));
-      --preview-height: calc(var(--preview-width) * 2.16);
-      width: var(--preview-width);
-      height: var(--preview-height);
-      display: block;
-      flex: 0 0 var(--preview-width);
-      margin-right: var(--u-large);
-    }
-    .preview__image:last-child {
-      border-right: var(--u-large) solid transparent;
-    }
-
-    .preview__controls {
-      position: fixed;
-      bottom: 0;
-      width: 100vw;
-      background-color: var(--c-front);
-      left: 0;
-      display: flex;
-      justify-content: space-between;
-      padding-bottom: constant(safe-area-inset-bottom);
-      padding-bottom: env(safe-area-inset-bottom);
-      box-sizing: border-box;
-    }
-    @keyframes enter {
-      0% {
-        transform: translateY(-24px);
-      }
-      100% {
-        transform: translateY(0);
-      }
-    }
-    .preview__controls a {
-      padding: var(--u-larger) var(--u-large);
-      color: var(--c-back);
-      font-family: 'Montserrat', sans-serif;
-      text-decoration: none;
-      animation: enter .5s cubic-bezier(.17,.67,.63,1.35);
-    }
-    
   </style>
 </head>
 <body>
   <div class="author">
     <a href="http://zinc.world" target="_blank" class="author__avatar" aria-label="Zinc's Avatar"></a>
     <strong class="author__name">zinc</strong>
-  </div>
-
-  <div id="1" class="preview">
-    <div class="preview__controls">
-      <a href="wallpapers/wall1.jpeg" class="preview__download">download</a>
-      <a href="#" class="preview__close">hide</a>
-    </div>
-    <img src="wallpapers/wall1.jpeg" class="preview__image" "--clean />
-    <img src="wallpapers/wall1.jpeg" class="preview__image "--lock" />
-    <img src="wallpapers/wall1.jpeg" class="preview__image "--home" />
-  </div>
-  <div id="2" class="preview">
-    <div class="preview__controls">
-      <a href="wallpapers/wall2.jpeg" class="preview__download">download</a>
-      <a href="#" class="preview__close">hide</a>
-    </div>
-    <img src="wallpapers/wall2.jpeg" class="preview__image" "--clean />
-    <img src="wallpapers/wall2.jpeg" class="preview__image "--lock" />
-    <img src="wallpapers/wall2.jpeg" class="preview__image "--home" />
-  </div>
-  <div id="3" class="preview">
-    <div class="preview__controls">
-      <a href="wallpapers/wall3.jpeg" class="preview__download">download</a>
-      <a href="#" class="preview__close">hide</a>
-    </div>
-    <img src="wallpapers/wall3.jpeg" class="preview__image" "--clean />
-    <img src="wallpapers/wall3.jpeg" class="preview__image "--lock" />
-    <img src="wallpapers/wall3.jpeg" class="preview__image "--home" />
-  </div>
-  <div id="4" class="preview">
-    <div class="preview__controls">
-      <a href="wallpapers/wall4.jpeg" class="preview__download">download</a>
-      <a href="#" class="preview__close">hide</a>
-    </div>
-    <img src="wallpapers/wall4.jpeg" class="preview__image" "--clean />
-    <img src="wallpapers/wall4.jpeg" class="preview__image "--lock" />
-    <img src="wallpapers/wall4.jpeg" class="preview__image "--home" />
-  </div>
-  <div id="5" class="preview">
-    <div class="preview__controls">
-      <a href="wallpapers/wall5.jpeg" class="preview__download">download</a>
-      <a href="#" class="preview__close">hide</a>
-    </div>
-    <img src="wallpapers/wall5.jpeg" class="preview__image" "--clean />
-    <img src="wallpapers/wall5.jpeg" class="preview__image "--lock" />
-    <img src="wallpapers/wall5.jpeg" class="preview__image "--home" />
-  </div>
-  <div id="6" class="preview">
-    <div class="preview__controls">
-      <a href="wallpapers/wall6.jpeg" class="preview__download">download</a>
-      <a href="#" class="preview__close">hide</a>
-    </div>
-    <img src="wallpapers/wall6.jpeg" class="preview__image" "--clean />
-    <img src="wallpapers/wall6.jpeg" class="preview__image "--lock" />
-    <img src="wallpapers/wall6.jpeg" class="preview__image "--home" />
-  </div>
-  <div id="7" class="preview">
-    <div class="preview__controls">
-      <a href="wallpapers/wall7.jpeg" class="preview__download">download</a>
-      <a href="#" class="preview__close">hide</a>
-    </div>
-    <img src="wallpapers/wall7.jpeg" class="preview__image" "--clean />
-    <img src="wallpapers/wall7.jpeg" class="preview__image "--lock" />
-    <img src="wallpapers/wall7.jpeg" class="preview__image "--home" />
-  </div>
-  <div id="8" class="preview">
-    <div class="preview__controls">
-      <a href="wallpapers/wall8.jpeg" class="preview__download">download</a>
-      <a href="#" class="preview__close">hide</a>
-    </div>
-    <img src="wallpapers/wall8.jpeg" class="preview__image" "--clean />
-    <img src="wallpapers/wall8.jpeg" class="preview__image "--lock" />
-    <img src="wallpapers/wall8.jpeg" class="preview__image "--home" />
-  </div>
-  <div id="9" class="preview">
-    <div class="preview__controls">
-      <a href="wallpapers/wall9.jpeg" class="preview__download">download</a>
-      <a href="#" class="preview__close">hide</a>
-    </div>
-    <img src="wallpapers/wall9.jpeg" class="preview__image" "--clean />
-    <img src="wallpapers/wall9.jpeg" class="preview__image "--lock" />
-    <img src="wallpapers/wall9.jpeg" class="preview__image "--home" />
-  </div>
-  <div id="10" class="preview">
-    <div class="preview__controls">
-      <a href="wallpapers/wall10.jpeg" class="preview__download">download</a>
-      <a href="#" class="preview__close">hide</a>
-    </div>
-    <img src="wallpapers/wall10.jpeg" class="preview__image preview__image--clean" />
-    <img src="wallpapers/wall10.jpeg" class="preview__image preview__image--lock" />
-    <img src="wallpapers/wall10.jpeg" class="preview__image preview__image--home" />
-  </div>
-  <div id="11" class="preview">
-    <div class="preview__controls">
-      <a href="wallpapers/wall11.jpeg" class="preview__download">download</a>
-      <a href="#" class="preview__close">hide</a>
-    </div>
-    <img src="wallpapers/wall11.jpeg" class="preview__image preview__image--clean" />
-    <img src="wallpapers/wall11.jpeg" class="preview__image preview__image--lock" />
-    <img src="wallpapers/wall11.jpeg" class="preview__image preview__image--home" />
-  </div>
-  <div id="12" class="preview">
-    <div class="preview__controls">
-      <a href="wallpapers/wall12.jpeg" class="preview__download">download</a>
-      <a href="#" class="preview__close">hide</a>
-    </div>
-    <img src="wallpapers/wall12.jpeg" class="preview__image preview__image--clean" />
-    <img src="wallpapers/wall12.jpeg" class="preview__image preview__image--lock" />
-    <img src="wallpapers/wall12.jpeg" class="preview__image preview__image--home" />
-  </div>
-  <div id="13" class="preview">
-    <div class="preview__controls">
-      <a href="wallpapers/wall13.jpeg" class="preview__download">download</a>
-      <a href="#" class="preview__close">hide</a>
-    </div>
-    <img src="wallpapers/wall13.jpeg" class="preview__image preview__image--clean" />
-    <img src="wallpapers/wall13.jpeg" class="preview__image preview__image--lock" />
-    <img src="wallpapers/wall13.jpeg" class="preview__image preview__image--home" />
-  </div>
-  <div id="14" class="preview">
-    <div class="preview__controls">
-      <a href="wallpapers/wall14.jpeg" class="preview__download">download</a>
-      <a href="#" class="preview__close">hide</a>
-    </div>
-    <img src="wallpapers/wall14.jpeg" class="preview__image preview__image--clean" />
-    <img src="wallpapers/wall14.jpeg" class="preview__image preview__image--lock" />
-    <img src="wallpapers/wall14.jpeg" class="preview__image preview__image--home" />
-  </div>
-  <div id="15" class="preview">
-    <div class="preview__controls">
-      <a href="wallpapers/wall15.jpeg" class="preview__download">download</a>
-      <a href="#" class="preview__close">hide</a>
-    </div>
-    <img src="wallpapers/wall15.jpeg" class="preview__image preview__image--clean" />
-    <img src="wallpapers/wall15.jpeg" class="preview__image preview__image--lock" />
-    <img src="wallpapers/wall15.jpeg" class="preview__image preview__image--home" />
-  </div>
-  <div id="16" class="preview">
-    <div class="preview__controls">
-      <a href="wallpapers/wall16.jpeg" class="preview__download">download</a>
-      <a href="#" class="preview__close">hide</a>
-    </div>
-    <img src="wallpapers/wall16.jpeg" class="preview__image preview__image--clean" />
-    <img src="wallpapers/wall16.jpeg" class="preview__image preview__image--lock" />
-    <img src="wallpapers/wall16.jpeg" class="preview__image preview__image--home" />
   </div>
   <header>
     <p>I made some free iPhone</p>
@@ -350,84 +151,52 @@
   </header>
   <ul class="wallpapers">
     <li class="wallpaper">
-      <a href="#1">
-        <img src="wallpapers/wall1.jpeg" />
-      </a>
+      <a class="wallpaper__link" href="/wallpapers/wall1.jpeg" style="background-image: url('wallpapers/wall1.jpeg')"></a>
     </li>
     <li class="wallpaper">
-      <a href="#2">
-        <img src="wallpapers/wall2.jpeg" />
-      </a>
+      <a class="wallpaper__link" href="/wallpapers/wall2.jpeg" style="background-image: url('wallpapers/wall2.jpeg')"></a>
     </li>
     <li class="wallpaper">
-      <a href="#3">
-        <img src="wallpapers/wall3.jpeg" />
-      </a>
+      <a class="wallpaper__link" href="/wallpapers/wall3.jpeg" style="background-image: url('wallpapers/wall3.jpeg')"></a>
     </li>
     <li class="wallpaper">
-      <a href="#4">
-        <img src="wallpapers/wall4.jpeg" />
-      </a>
+      <a class="wallpaper__link" href="/wallpapers/wall4.jpeg" style="background-image: url('wallpapers/wall4.jpeg')"></a>
     </li>
     <li class="wallpaper">
-      <a href="#5">
-        <img src="wallpapers/wall5.jpeg" />
-      </a>
+      <a class="wallpaper__link" href="/wallpapers/wall5.jpeg" style="background-image: url('wallpapers/wall5.jpeg')"></a>
     </li>
     <li class="wallpaper">
-      <a href="#6">
-        <img src="wallpapers/wall6.jpeg" />
-      </a>
+      <a class="wallpaper__link" href="/wallpapers/wall6.jpeg" style="background-image: url('wallpapers/wall6.jpeg')"></a>
     </li>
     <li class="wallpaper">
-      <a href="#7">
-        <img src="wallpapers/wall7.jpeg" />
-      </a>
+      <a class="wallpaper__link" href="/wallpapers/wall7.jpeg" style="background-image: url('wallpapers/wall7.jpeg')"></a>
     </li>
     <li class="wallpaper">
-      <a href="#8">
-        <img src="wallpapers/wall8.jpeg" />
-      </a>
+      <a class="wallpaper__link" href="/wallpapers/wall8.jpeg" style="background-image: url('wallpapers/wall8.jpeg')"></a>
     </li>
     <li class="wallpaper">
-      <a href="#9">
-        <img src="wallpapers/wall9.jpeg" />
-      </a>
+      <a class="wallpaper__link" href="/wallpapers/wall9.jpeg" style="background-image: url('wallpapers/wall9.jpeg')"></a>
     </li>
     <li class="wallpaper">
-      <a href="#10">
-        <img src="wallpapers/wall10.jpeg" />
-      </a>
+      <a class="wallpaper__link" href="/wallpapers/wall10.jpeg" style="background-image: url('wallpapers/wall10.jpeg')"></a>
     </li>
     <li class="wallpaper">
-      <a href="#11">
-        <img src="wallpapers/wall11.jpeg" />
-      </a>
+      <a class="wallpaper__link" href="/wallpapers/wall11.jpeg" style="background-image: url('wallpapers/wall11.jpeg')"></a>
     </li>
     <li class="wallpaper">
-      <a href="#12">
-        <img src="wallpapers/wall12.jpeg" />
-      </a>
+      <a class="wallpaper__link" href="/wallpapers/wall12.jpeg" style="background-image: url('wallpapers/wall12.jpeg')"></a>
     </li>
     <li class="wallpaper">
-      <a href="#13">
-        <img src="wallpapers/wall13.jpeg" />
-      </a>
+      <a class="wallpaper__link" href="/wallpapers/wall13.jpeg" style="background-image: url('wallpapers/wall13.jpeg')"></a>
     </li>
     <li class="wallpaper">
-      <a href="#14">
-        <img src="wallpapers/wall14.jpeg" />
-      </a>
+      <a class="wallpaper__link" href="/wallpapers/wall14.jpeg" style="background-image: url('wallpapers/wall14.jpeg')"></a>
     </li>
     <li class="wallpaper">
-      <a href="#15">
-        <img src="wallpapers/wall15.jpeg" />
-      </a>
+      <a class="wallpaper__link" href="/wallpapers/wall15.jpeg" style="background-image: url('wallpapers/wall15.jpeg')"></a>
     </li>
     <li class="wallpaper">
-      <a href="#16">
-        <img src="wallpapers/wall16.jpeg" />
-      </a>
+      <a class="wallpaper__link" href="/wallpapers/wall16.jpeg" style="background-image: url('wallpapers/wall16.jpeg')"></a>
     </li>
   </ul>
 

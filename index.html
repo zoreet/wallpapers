@@ -103,27 +103,19 @@
     }
     .wallpaper {
       --wallpaper-width: calc(calc(100vw - var(--u-omg)) / 3);
-      --wallpaper-height: calc(var(--wallpaper-width) * 2.16);
       --wallpaper-corners: calc(var(--wallpaper-width) * 0.1);
 
       background-color: var(--c-front);
-      /* background-image: radial-gradient(var(--c-front) 15%, transparent 16%), radial-gradient(var(--c-front) 15%, transparent 16%); */
-      background-position: 0.5em 0.5em, 1.5em 1.5em;
-      background-size: 2em 2em;
       border-radius: var(--wallpaper-corners);
       display: flex;
-      font-size: calc(var(--wallpaper-width) / 5); /* this controls the background scale */
-      height: var(--wallpaper-height);
-      width: var(--wallpaper-width);
       overflow: hidden;
-      font-size: 8px
     }
     .wallpaper__link {
       display: block;
+    }
+    .wallpaper__image {
       width: 100%;
-      height: 100%;
-      background-position: 50%;
-      background-size: cover;
+      display: block;
     }
 
     footer {
@@ -135,6 +127,17 @@
     }
     footer a {
       color: inherit;
+    }
+
+    @media only screen and (min-device-width: 1440px) {
+      .wallpapers {
+        grid-template-columns: repeat(6, 1fr);
+        grid-column-gap: var(--u-medium);
+        grid-row-gap: var(--u-larger);
+      }
+      .wallpaper {
+        --wallpaper-width: calc(calc(100vw - var(--u-omg)) / 6);
+      }
     }
 
   </style>
@@ -151,52 +154,109 @@
   </header>
   <ul class="wallpapers">
     <li class="wallpaper">
-      <a class="wallpaper__link" href="/wallpapers/wall1.jpeg" style="background-image: url('wallpapers/wall1.jpeg')"></a>
+      <a class="wallpaper__link" href="/wallpapers/wall_1.jpeg">
+        <img src="wallpapers/wall_1.jpeg" class="wallpaper__image" />
+      </a>
     </li>
     <li class="wallpaper">
-      <a class="wallpaper__link" href="/wallpapers/wall2.jpeg" style="background-image: url('wallpapers/wall2.jpeg')"></a>
+      <a class="wallpaper__link" href="/wallpapers/wall_2.jpeg">
+        <img src="wallpapers/wall_2.jpeg" class="wallpaper__image" />
+      </a>
     </li>
     <li class="wallpaper">
-      <a class="wallpaper__link" href="/wallpapers/wall3.jpeg" style="background-image: url('wallpapers/wall3.jpeg')"></a>
+      <a class="wallpaper__link" href="/wallpapers/wall_3.jpeg">
+        <img src="wallpapers/wall_3.jpeg" class="wallpaper__image" />
+      </a>
     </li>
     <li class="wallpaper">
-      <a class="wallpaper__link" href="/wallpapers/wall4.jpeg" style="background-image: url('wallpapers/wall4.jpeg')"></a>
+      <a class="wallpaper__link" href="/wallpapers/wall_4.jpeg">
+        <img src="wallpapers/wall_4.jpeg" class="wallpaper__image" />
+      </a>
     </li>
     <li class="wallpaper">
-      <a class="wallpaper__link" href="/wallpapers/wall5.jpeg" style="background-image: url('wallpapers/wall5.jpeg')"></a>
+      <a class="wallpaper__link" href="/wallpapers/wall_5.jpeg">
+        <img src="wallpapers/wall_5.jpeg" class="wallpaper__image" />
+      </a>
     </li>
     <li class="wallpaper">
-      <a class="wallpaper__link" href="/wallpapers/wall6.jpeg" style="background-image: url('wallpapers/wall6.jpeg')"></a>
+      <a class="wallpaper__link" href="/wallpapers/wall_6.jpeg">
+        <img src="wallpapers/wall_6.jpeg" class="wallpaper__image" />
+      </a>
     </li>
     <li class="wallpaper">
-      <a class="wallpaper__link" href="/wallpapers/wall7.jpeg" style="background-image: url('wallpapers/wall7.jpeg')"></a>
+      <a class="wallpaper__link" href="/wallpapers/wall_7.jpeg">
+        <img src="wallpapers/wall_7.jpeg" class="wallpaper__image" />
+      </a>
     </li>
     <li class="wallpaper">
-      <a class="wallpaper__link" href="/wallpapers/wall8.jpeg" style="background-image: url('wallpapers/wall8.jpeg')"></a>
+      <a class="wallpaper__link" href="/wallpapers/wall_8.jpeg">
+        <img src="wallpapers/wall_8.jpeg" class="wallpaper__image" />
+      </a>
     </li>
     <li class="wallpaper">
-      <a class="wallpaper__link" href="/wallpapers/wall9.jpeg" style="background-image: url('wallpapers/wall9.jpeg')"></a>
+      <a class="wallpaper__link" href="/wallpapers/wall_9.jpeg">
+        <img src="wallpapers/wall_9.jpeg" class="wallpaper__image" />
+      </a>
     </li>
     <li class="wallpaper">
-      <a class="wallpaper__link" href="/wallpapers/wall10.jpeg" style="background-image: url('wallpapers/wall10.jpeg')"></a>
+      <a class="wallpaper__link" href="/wallpapers/wall_10.jpeg">
+        <img src="wallpapers/wall_10.jpeg" class="wallpaper__image" />
+      </a>
     </li>
     <li class="wallpaper">
-      <a class="wallpaper__link" href="/wallpapers/wall11.jpeg" style="background-image: url('wallpapers/wall11.jpeg')"></a>
+      <a class="wallpaper__link" href="/wallpapers/wall_11.jpeg">
+        <img src="wallpapers/wall_11.jpeg" class="wallpaper__image" />
+      </a>
     </li>
     <li class="wallpaper">
-      <a class="wallpaper__link" href="/wallpapers/wall12.jpeg" style="background-image: url('wallpapers/wall12.jpeg')"></a>
+      <a class="wallpaper__link" href="/wallpapers/wall_12.jpeg">
+        <img src="wallpapers/wall_12.jpeg" class="wallpaper__image" />
+      </a>
     </li>
     <li class="wallpaper">
-      <a class="wallpaper__link" href="/wallpapers/wall13.jpeg" style="background-image: url('wallpapers/wall13.jpeg')"></a>
+      <a class="wallpaper__link" href="/wallpapers/wall_15.jpeg">
+        <img src="wallpapers/wall_15.jpeg" class="wallpaper__image" />
+      </a>
     </li>
     <li class="wallpaper">
-      <a class="wallpaper__link" href="/wallpapers/wall14.jpeg" style="background-image: url('wallpapers/wall14.jpeg')"></a>
+      <a class="wallpaper__link" href="/wallpapers/wall_13.jpeg">
+        <img src="wallpapers/wall_13.jpeg" class="wallpaper__image" />
+      </a>
     </li>
     <li class="wallpaper">
-      <a class="wallpaper__link" href="/wallpapers/wall15.jpeg" style="background-image: url('wallpapers/wall15.jpeg')"></a>
+      <a class="wallpaper__link" href="/wallpapers/wall_14.jpeg">
+        <img src="wallpapers/wall_14.jpeg" class="wallpaper__image" />
+      </a>
     </li>
     <li class="wallpaper">
-      <a class="wallpaper__link" href="/wallpapers/wall16.jpeg" style="background-image: url('wallpapers/wall16.jpeg')"></a>
+      <a class="wallpaper__link" href="/wallpapers/wall_16.jpeg">
+        <img src="wallpapers/wall_16.jpeg" class="wallpaper__image" />
+      </a>
+    </li>
+    <li class="wallpaper">
+      <a class="wallpaper__link" href="/wallpapers/wall_17.jpeg">
+        <img src="wallpapers/wall_17.jpeg" class="wallpaper__image" />
+      </a>
+    </li>
+    <li class="wallpaper">
+      <a class="wallpaper__link" href="/wallpapers/wall_18.jpeg">
+        <img src="wallpapers/wall_18.jpeg" class="wallpaper__image" />
+      </a>
+    </li>
+    <li class="wallpaper">
+      <a class="wallpaper__link" href="/wallpapers/wall_19.jpeg">
+        <img src="wallpapers/wall_19.jpeg" class="wallpaper__image" />
+      </a>
+    </li>
+    <li class="wallpaper">
+      <a class="wallpaper__link" href="/wallpapers/wall_20.jpeg">
+        <img src="wallpapers/wall_20.jpeg" class="wallpaper__image" />
+      </a>
+    </li>
+    <li class="wallpaper">
+      <a class="wallpaper__link" href="/wallpapers/wall_21.jpeg">
+        <img src="wallpapers/wall_21.jpeg" class="wallpaper__image" />
+      </a>
     </li>
   </ul>
 
